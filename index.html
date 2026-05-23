@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academia da Sinuca - Cardápio</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#0d0d0d;
+      color:white;
+    }
+
+    header{
+      background:#c40000;
+      padding:25px;
+      text-align:center;
+      box-shadow:0 0 20px #ff0000;
+    }
+
+    header h1{
+      font-size:40px;
+      color:white;
+      text-transform:uppercase;
+    }
+
+    header p{
+      margin-top:10px;
+      font-size:18px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1000px;
+      margin:40px auto;
+    }
+
+    .categoria{
+      margin-bottom:40px;
+    }
+
+    .categoria h2{
+      color:#ff2b2b;
+      margin-bottom:20px;
+      border-left:5px solid #ff0000;
+      padding-left:10px;
+      font-size:30px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:#1a1a1a;
+      border:2px solid #ff0000;
+      border-radius:15px;
+      padding:20px;
+      transition:0.3s;
+      box-shadow:0 0 10px rgba(255,0,0,0.4);
+    }
+
+    .card:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 20px rgba(255,0,0,0.8);
+    }
+
+    .card h3{
+      color:#ff3c3c;
+      margin-bottom:10px;
+      font-size:24px;
+    }
+
+    .card p{
+      color:#ccc;
+      margin-bottom:15px;
+    }
+
+    .preco{
+      font-size:28px;
+      font-weight:bold;
+      color:#00ff66;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#111;
+      margin-top:40px;
+      border-top:2px solid #ff0000;
+    }
+
+    footer p{
+      margin:5px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Academia da Sinuca</h1>
+    <p>Suas melhores partidas são aqui 🎱</p>
+  </header>
+
+  <div class="container">
+
+    <section class="categoria">
+      <h2>🍺 Bebidas</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Brahma Litrão</h3>
+          <p>Cerveja gelada 1 litro</p>
+          <div class="preco">R$ 17,00</div>
+        </div>
+             <div class="card">
+          <h3>Brahma Litrão</h3>
+          <p>Cerveja gelada 1 litro</p>
+          <div class="preco">R$ 17,00</div>
+        </div>
+  <div class="card">
+          <h3>Amstel Litrão</h3>
+          <p>Cerveja gelada 1 litro</p>
+          <div class="preco">R$ 16,00</div>
+        </div>
+  <div class="card">
+          <h3>Budweiser Litrão</h3>
+          <p>Cerveja gelada 1 litro</p>
+          <div class="preco">R$ 19,00</div>
+        </div>
+  <div class="card">
+          <h3>Heineken 600ml</h3>
+          <p>Cerveja gelada 600ml</p>
+          <div class="preco">R$ 19,00</div>
+        </div>
+        <div class="card">
+          <h3>Copão</h3>
+          <p>Bebida especial da casa</p>
+          <div class="preco">R$ 19,90</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="categoria">
+      <h2>🍟 Petiscos</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Batata Frita 350g</h3>
+          <p>Porção crocante e saborosa</p>
+          <div class="preco">R$ 21,90</div>
+        </div>
+        
+        <div class="card">
+          <h3>Batata Frita 650g</h3>
+          <p>Porção crocante e saborosa</p>
+          <div class="preco">R$ 29,90</div>
+        </div>
+
+        <div class="card">
+          <h3>Polenta Frita 500g</h3>
+          <p>Acompanha Comdimentos</p>
+          <div class="preco">R$ 27,90</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="categoria">
+      <h2>🎱 Combos</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Combo Semi Pro</h3>
+          <p>1 Hora + Copão</p>
+          <div class="preco">R$ 34,90</div>
+        </div>
+
+        <div class="card">
+          <h3>Combo Mesa Pro</h3>
+          <p>1 Hora + Copão</p>
+          <div class="preco">R$ 44,90</div>
+        </div>
+
+      </div>
+    </section>
+
+   <section class="categorias">
+      <div class="card">
+          <h3>Mesa Semi Pro</h3>
+          <p>Opção certa para se divertir hora</p>
+          <div class="preco">R$ 20,00</div>
+        </div>
+      <div class="card">
+          <h3>Mesa Pro</h3>
+          <p>Opção certa para quem deseja ir além e jogar como os profissionais hora</p>
+          <div class="preco">R$ 30,00</div>
+        </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>📍 Rua Santa Clara 273 - Sala 3 - Pelotas</p>
+    <p>🎱 Ambiente fechado e controlado</p>
+  </footer>
+
+</body>
+</html>
+
