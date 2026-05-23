@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #fff;
+    min-height: 100vh;
+
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    ),
+    url('https://images.unsplash.com/photo-1668605048080-2ceacc3fa49f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+}
+
+header h1,
+h2 {
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+.logo img{
+  max-width: 400px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.categoria {
+    margin-bottom: 40px;
+}
+
+.categoria h2 {
+    color: #ff2b2b;
+    margin-bottom: 20px;
+    border-left: 5px solid #ff0000;
+    padding-left: 10px;
+    font-size: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    border: 2px solid #ff0000;
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+.card h3 {
+    color: #ff3c3c;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.card p {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.preco {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00ff66;
+}
+
+.mesas-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.mesa {
+    display: grid;
+    width: 100%;
+    text-align: center;
+
+}
+
+.mesa p {
+    min-height: 100px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #111;
+    margin-top: 40px;
+    border-top: 2px solid #ff0000;
+}
+
+footer p {
+    margin: 5px 0;
+}
+.instagram{
+    display: flex;
+    align-items: center;
+}
