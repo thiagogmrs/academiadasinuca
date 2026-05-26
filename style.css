@@ -9,18 +9,15 @@ body {
     color: #fff;
     min-height: 100vh;
 
-    background-image: linear-gradient(
-        rgba(0,0,0,0.7),
-        rgba(0,0,0,0.7)
-    ),
-    url('https://images.unsplash.com/photo-1668605048080-2ceacc3fa49f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1659530298431-40a6599cabb5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 header {
     padding: 10px;
     text-align: center;
@@ -37,14 +34,26 @@ header p {
     margin-top: 10px;
     font-size: 18px;
 }
-.logo img{
-  max-width: 400px;
+
+.logo img {
+    max-width: 400px;
+}
+@media (max-width: 568px){
+    .logo img{
+        max-width: 300px;
+    }
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     margin: 40px auto;
+}
+@media (max-width: 568px){
+    .container{
+        padding: 45px;
+        margin: 0px;
+    }
 }
 
 .categoria {
@@ -61,17 +70,120 @@ header p {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
+@media (max-width: 960px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 568px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
 .card {
-    background: #1a1a1a;
     border: 2px solid #ff0000;
     border-radius: 15px;
     padding: 20px;
     transition: 0.3s;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+    max-width: 300px;
+}
+
+.batata-650g {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://media.istockphoto.com/id/1188012197/pt/foto/french-fries.jpg?s=612x612&w=0&k=20&c=qM_zyTflKZzmI_41KRDRFbCo9ETLKhtAior3Wq3PR-A=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 80%;
+
+}
+
+.polenta-400g {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://media.istockphoto.com/id/2154702459/pt/foto/crispy-golden-french-fries-served-in-a-stylish-metal-frying-basket-ready-for-dipping-on-a-dark.jpg?s=612x612&w=0&k=20&c=croaV-jW4An2j_LLQzY7V-pmGX92sXgLvYU2xixPetk=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-x: right;
+}
+
+.cerveja-reineken {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1588182030446-c3fae46fb125?q=80&w=723&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 80%;
+}
+
+.cerveja-bud {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://as1.ftcdn.net/v2/jpg/04/83/84/20/1000_F_483842078_PoBnRS9NraJ0psqTRK1dp5EqTTdzs0Rk.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 80%;
+}
+
+.coca-cola-600 {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://thumbs.dreamstime.com/b/garrafa-de-cocacola-em-gelo-triturado-poznan-pol-maio-refrigerante-gaseificado-fabricado-pela-empresa-com-sede-atlanta-georgia-usa-185912373.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 80%;
+}
+
+.coca-cola-lata {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 80%;
+}
+
+.monster {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('https://images.unsplash.com/photo-1622543925917-763c34d1a86e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 80%;
+}
+
+.redbull {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1642532561037-cbfc176b0dfd?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 80%;
+}
+
+.caipirinha {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://media.istockphoto.com/id/1227433846/pt/foto/caipirinha-a-typical-brazilian-cocktail-made-with-lemon-cacha%C3%A7a-and-sugar-brazilian.jpg?s=612x612&w=0&k=20&c=IlbOvq8cbGG9dqzAhrVHTNeyXnudVZrYQH6zeegSmEI=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 80%;
 }
 
 .card:hover {
@@ -80,7 +192,7 @@ header p {
 }
 
 .card h3 {
-    color: #ff3c3c;
+    color: #fff;
     margin-bottom: 10px;
     font-size: 24px;
 }
@@ -95,27 +207,24 @@ header p {
     font-weight: bold;
     color: #00ff66;
 }
-
-.mesas-flex {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.mesa-semi{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.tcdn.com.br/img/img_prod/1408689/mesa_de_sinuca_rede_tocantins_preta_11_1_435c4f54f72a84da601bd9e38cdedf14.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 65%;
 }
-
-.mesa {
-    display: grid;
-    width: 100%;
-    text-align: center;
-
+.mesa-pro{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://jocari.com.br/arquivos/images/produtos/mesa-oficial-majestade-1706898879.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 60%;
 }
-
-.mesa p {
-    min-height: 100px;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-}
-
 footer {
     text-align: center;
     padding: 25px;
@@ -127,7 +236,8 @@ footer {
 footer p {
     margin: 5px 0;
 }
-.instagram{
+
+.instagram {
     display: flex;
     align-items: center;
 }
