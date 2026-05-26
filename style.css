@@ -113,7 +113,7 @@ header p {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-position-x: right;
+    background-position-y: 65%;
 }
 .pastelzinho{
     background-image:
