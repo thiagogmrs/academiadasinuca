@@ -144,6 +144,31 @@ header p {
     background-position: center;
     background-position-y: 80%;
 }
+.cerveja-brahma{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-12.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 80%;
+}
+.cerveja-amstel{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-13.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;;
+}
+.cerveja-polar{
+       background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-14.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;;
+}
 .cerveja-corona {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -154,7 +179,6 @@ header p {
     background-position-y: 45%;
     background-position-x: 40%;
 }
-
 .coca-cola-600 {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -168,6 +192,14 @@ header p {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('img-10.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.coca-cola-290{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-15.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
