@@ -11,7 +11,7 @@ body {
 
     background-image: linear-gradient(rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.7)),
-        url('https://images.unsplash.com/photo-1659530298431-40a6599cabb5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        url('');
 
     background-size: cover;
     background-position: center;
@@ -115,7 +115,7 @@ header p {
     background-position: center;
     background-position-y: 65%;
 }
-.pastelzinho{
+/* .pastelzinho{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('img-3.png');
@@ -123,7 +123,7 @@ header p {
     background-size: cover;
     background-position: center;
     background-position-y: 80%;
-}
+} */
 
 .cerveja-reineken {
     background-image:
@@ -228,7 +228,7 @@ header p {
 .caipirinha {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('https://media.istockphoto.com/id/1227433846/pt/foto/caipirinha-a-typical-brazilian-cocktail-made-with-lemon-cacha%C3%A7a-and-sugar-brazilian.jpg?s=612x612&w=0&k=20&c=IlbOvq8cbGG9dqzAhrVHTNeyXnudVZrYQH6zeegSmEI=');
+        url('');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -275,7 +275,7 @@ header p {
 .mesa-pro{
      background-image:
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('https://jocari.com.br/arquivos/images/produtos/mesa-oficial-majestade-1706898879.jpeg');
+        url('');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
