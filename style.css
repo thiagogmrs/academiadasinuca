@@ -87,10 +87,31 @@ header p {
     max-width: 300px;
 }
 
+.combos {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-19.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 65%;
+
+}
+
 .batata-650g {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('img-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 65%;
+
+}
+.pizza {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-18.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -117,18 +138,7 @@ header p {
     background-position-y: 65%;
 
 }
-.pizza {
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-18.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y: 65%;
-
-}
-
-/* .pastelzinho{
+.pastelzinho{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('img-3.png');
@@ -136,7 +146,7 @@ header p {
     background-size: cover;
     background-position: center;
     background-position-y: 80%;
-} */
+}
 
 .cerveja-reineken {
     background-image:
