@@ -90,7 +90,7 @@ header p {
 .combos {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-19.png');
+        url('img-19.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -101,7 +101,7 @@ header p {
 .batata-650g {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-1.png');
+        url('img-1.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -111,7 +111,7 @@ header p {
 .pizza {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-18.png');
+        url('img-18.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -122,7 +122,7 @@ header p {
 .polenta-400g {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-2.png');
+        url('img-2.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -131,7 +131,7 @@ header p {
 .batata-350g {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-1.png');
+        url('img-1.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -141,27 +141,27 @@ header p {
 .pastelzinho{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-3.png');
+        url('img-3.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-position-y: 80%;
 }
 
-.cerveja-reineken {
+.cerveja-reineken, .cerveja-heineken-long {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-6.png');
+        url('img-6.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-position-y: 60%;
 }
 
-.cerveja-bud {
+.cerveja-bud, .cerveja-bud-long {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-7.png');
+        url('img-7.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -170,7 +170,7 @@ header p {
 .cerveja-brahma{
      background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-12.png');
+        url('img-12.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -179,7 +179,7 @@ header p {
 .cerveja-amstel{
      background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-13.png');
+        url('img-13.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;;
@@ -187,7 +187,7 @@ header p {
 .cerveja-polar{
        background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-14.png');
+        url('img-14.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;;
@@ -195,7 +195,7 @@ header p {
 .cerveja-corona {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-8.png');
+        url('img-8.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -205,7 +205,7 @@ header p {
 .coca-cola-600 {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-9.png');
+        url('img-9.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -214,7 +214,7 @@ header p {
 .coca-cola-lata {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-10.png');
+        url('img-10.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -222,26 +222,68 @@ header p {
 .coca-cola-290{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-15.png');
+        url('img-15.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-
-.monster {
+.pepsi{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('img-4.png');
+        url('img-4.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-position-y: 50%;
 }
-
+.pepsi{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('img-20.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
+.fanta{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('img-22.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
+.guarana {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('img-21.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
+.sprite {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('img-23.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
 .redbull {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-5.png');
+        url('img-5.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.monster{
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-4.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -249,7 +291,61 @@ header p {
 .baly{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-17.png');
+        url('img-17.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
+.caipirinha{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-26.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
+.copao{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-25.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
+.beats{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-24.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
+.agua{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-28.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
+.h2oh{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-27.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
+.delvalle{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-29.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -285,7 +381,7 @@ header p {
 .mesa-semi{
      background-image:
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('img-11.png');
+        url('img-11.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -295,7 +391,7 @@ header p {
 .mesa-pro{
      background-image:
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('img-16.png');
+        url('img-16.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
