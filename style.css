@@ -86,7 +86,42 @@ header p {
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
     max-width: 300px;
 }
+.mesas{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
 
+}
+.mesa-semi{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('img-11.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 65%;
+    max-width: 300px;
+}
+.mesa-pro{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('img-16.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 60%;
+    height: 290px;
+}
+.extra{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('img-31.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 60%;
+    height: 290px;
+}
 .combos {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -380,32 +415,6 @@ header p {
     font-size: 28px;
     font-weight: bold;
     color: #00ff66;
-}
-.mesas{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr, 1fr;
-
-}
-.mesa-semi{
-     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('img-11.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y: 65%;
-    max-width: 300px;
-}
-.mesa-pro{
-     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('img-16.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y: 60%;
-    height: 290px;
 }
 footer {
     text-align: center;
