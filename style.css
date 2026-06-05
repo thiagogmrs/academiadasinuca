@@ -76,6 +76,9 @@ header p {
     .cards {
         grid-template-columns: 1fr;
     }
+    .extra, .mesa-semi{
+        height: 200px;
+    }
 }
 
 .card {
@@ -85,53 +88,30 @@ header p {
     transition: 0.3s;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
     max-width: 300px;
-}
-.mesas{
-    width: 100%;
     display: grid;
-    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: auto;
+}
+.animation{
+    animation-name: pulsar;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+/* Configuração de como o pulsar vai se comportar */
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05); /* Expande levemente o card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1); /* Retorna ao tamanho original */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
 
-}
-.mesa-semi{
-     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('img-11.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y: 65%;
-    max-width: 300px;
-}
-.mesa-pro{
-     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('img-16.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y: 60%;
-    height: 290px;
-}
-.extra{
-     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('img-31.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y: 60%;
-    height: 290px;
-}
-.combos {
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-19.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y: 65%;
-
-}
 
 .batata-650g {
     background-image:
@@ -415,6 +395,83 @@ header p {
     font-size: 28px;
     font-weight: bold;
     color: #00ff66;
+}
+.mesas{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr;
+
+}
+.mesa-semi{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('img-11.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 65%;
+    max-width: 300px;
+}
+.mesa-pro{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('img-16.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 60%;
+    height: 290px;
+}
+.extra{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('img-31.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 60%;
+    height: 290px;
+    max-width: 300px;
+}
+.combos {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-19.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 65%;
+
+}
+#btnTopo {
+  display: none; /* Oculto por padrão */
+  position: fixed; /* Fica fixo na tela */
+  bottom: 30px; /* Distância do fundo */
+  right: 30px; /* Distância da direita */
+  z-index: 99; /* Fica por cima de tudo */
+  
+  /* Tamanho e Forma */
+  width: 50px;
+  height: 50px;
+  border-radius: 12px; /* Cantos arredondados modernos */
+  
+  /* Cores e Estilo */
+  border: none;
+  outline: none;
+  background: linear-gradient(135deg, #1a0308, #a30707); /* Gradiente moderno */
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  
+  /* Centralizar o ícone textualmente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Sombra e Transição */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 footer {
     text-align: center;
