@@ -134,7 +134,7 @@ header p {
 
 }
 
-.polenta-400g {
+/* .polenta-400g {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('img-2.webp');
@@ -142,7 +142,7 @@ header p {
     background-size: cover;
     background-position: center;
     background-position-y: 65%;
-}
+} */
 .batata-350g {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
