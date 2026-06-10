@@ -242,6 +242,15 @@ header p {
     background-size: cover;
     background-position: center;
 }
+.fys{
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('img-32.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+}
 .pepsi{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
