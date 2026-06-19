@@ -111,8 +111,64 @@ header p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 }
+.combos{
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
 
+    background-image:
+        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+        url('img-19.webp');
+    background-size: cover;
+    background-position: center;
+}
 
+.combos::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    background: conic-gradient(
+    transparent 0deg,
+    transparent 280deg,
+    #8B6B00 300deg,
+    #FFD700 320deg,
+    #FFF8DC 400deg,
+    #FFD700 400deg
+);
+    animation: girar 3s linear infinite;
+}
+
+.combos::after{
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 12px;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+        url('img-19.webp');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.combos > *{
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes girar{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
 .batata-650g {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -450,16 +506,6 @@ header p {
     background-position-y: 60%;
     height: 290px;
     max-width: 300px;
-}
-.combos {
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('img-19.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y: 65%;
-
 }
 #btnTopo {
   display: none; /* Oculto por padrão */
