@@ -247,7 +247,15 @@ header p {
     background-position: center;
     background-position-y: 60%;
 }
-
+.cerveja-original{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-35.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 60%;
+}
 .cerveja-bud, .cerveja-bud-long {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
