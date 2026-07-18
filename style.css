@@ -404,7 +404,7 @@ header p {
     background-position: center;
     background-position-y: 50%;
 }
-.caipirinha{
+/* .caipirinha{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('img-26.webp');
@@ -412,7 +412,7 @@ header p {
     background-size: cover;
     background-position: center;
     background-position-y: 50%;
-}
+} */
 .chopp{
      background-image:
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
