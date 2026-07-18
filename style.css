@@ -209,7 +209,7 @@ header p {
     background-position-y: 65%;
 
 }
-/* .croquete {
+.croquete {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('img-34.webp');
@@ -218,7 +218,7 @@ header p {
     background-position: center;
     background-position-y: 65%;
 
-} */
+} 
 .pastelzinho{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
