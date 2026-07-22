@@ -91,6 +91,9 @@ header p {
     display: grid;
     grid-template-rows: auto;
 }
+.card p{
+    line-height: 1.5;
+}
 .animation{
     animation-name: pulsar;
     animation-duration: 2.5s;
@@ -115,7 +118,6 @@ header p {
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-
     background-image:
         linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
         url('img-19.webp');
@@ -413,6 +415,60 @@ header p {
     background-position: center;
     background-position-y: 50%;
 } */
+ .jackdaniels{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-36.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+ }
+ .redlabel{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-37.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+ }
+ .whitehourse{
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-38.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+ }
+ .absolut{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-39.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+ }
+ .passport{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-40.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+ }
+ .blackfire{
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img-41.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 50%;
+ }
 .chopp{
      background-image:
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -422,7 +478,7 @@ header p {
     background-position: center;
     background-position-y: 50%;
 }
-.copao{
+/* .copao{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('img-25.webp');
@@ -430,7 +486,7 @@ header p {
     background-size: cover;
     background-position: center;
     background-position-y: 50%;
-}
+} */
 .beats{
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
