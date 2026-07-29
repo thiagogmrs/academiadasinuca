@@ -9,7 +9,7 @@ body {
     color: #fff;
     background: #000;
     min-height: 100vh;
-    overflow-x: hidden; /* Evita rolagem horizontal indesejada no mobile */
+    overflow-x: hidden;
 }
 
 /* ===========================
@@ -206,7 +206,7 @@ header p {
     letter-spacing: 2px;
     padding: 10px 0;
     transform: rotate(40deg);
-    box-shadow: 0 8px 20px rgba(255,90,0,.45);
+    box-shadow: 0 8px 20px rgba(216, 32, 0, 0.45);
     z-index: 5;
 }
 
@@ -215,17 +215,6 @@ header p {
     grid-template-columns: 2fr 1fr;
     gap: 45px;
     padding: 45px;
-}
-
-.torre-badge {
-    display: inline-block;
-    background: #FFD700;
-    color: #111;
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 20px;
 }
 
 .torre-titulo {
@@ -267,22 +256,40 @@ header p {
     justify-content: center;
 }
 
-.torre-preco {
-    text-align: center;
-    padding: 30px;
+/* Novo Card de Preço (Torre) */
+.torre-preco-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
     border-radius: 20px;
-    background: linear-gradient(180deg, #453300, #141414);
-    border: 2px solid #FFD700;
-    animation: precoPulse 2s infinite;
+    background: rgba(255, 215, 0, 0.03);
+    background-image: linear-gradient(145deg, rgba(255, 215, 0, 0.08) 0%, rgba(0, 0, 0, 0.6) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    backdrop-filter: blur(5px);
+    transition: all 0.4s ease;
 }
 
-.torre-preco-label {
-    display: block;
+.torre-preco-box:hover {
+    border-color: #FFD700;
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+}
+
+.preco-badge {
     color: #FFD700;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 800;
     letter-spacing: 2px;
-    margin-bottom: 12px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 12px;
+    margin-bottom: 15px;
 }
 
 .torre-preco-valor {
@@ -290,54 +297,63 @@ header p {
     justify-content: center;
     align-items: flex-start;
     color: #fff;
+    line-height: 1;
+    margin-bottom: 20px;
 }
 
 .torre-preco-valor small {
-    font-size: 28px;
-    margin-top: 18px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-right: 2px;
     color: #FFD700;
 }
 
 .torre-preco-valor strong {
-    font-size: 82px;
-    line-height: 1;
-    color: #fff;
-    text-shadow: 0 0 20px rgba(255,215,0,.5);
+    font-size: 76px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #ffffff;
+    text-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
 }
 
 .torre-preco-valor sup {
-    font-size: 32px;
-    margin-top: 12px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 10px;
     color: #FFD700;
 }
 
-.torre-preco p {
-    margin-top: 15px;
-    color: #ddd;
-}
-
-.torre-btn {
-    margin-top: 25px;
+.torre-btn-pedir {
     width: 100%;
-    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 20px;
     border: none;
     border-radius: 12px;
-    background: linear-gradient(90deg, #c40000, #ff2d2d);
+    background: linear-gradient(135deg, #ff1a1a 0%, #b30000 100%);
     color: #fff;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: .3s;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.35);
+    transition: all 0.3s ease;
 }
 
-.torre-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255,0,0,.45);
+.torre-btn-pedir:hover {
+    background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
 }
 
-@keyframes precoPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.03); }
+.torre-btn-pedir:hover svg {
+    transform: translateX(4px);
+}
+
+.torre-btn-pedir svg {
+    transition: transform 0.3s ease;
 }
 
 /* ===========================
@@ -493,7 +509,7 @@ footer p {
     }
 
     .torre-preco-valor strong {
-        font-size: 55px;
+        font-size: 58px;
     }
 
     .torre-preco-valor small {
