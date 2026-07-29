@@ -171,6 +171,410 @@ header p {
         transform: rotate(360deg);
     }
 }
+
+
+
+/* ===========================
+   TORRE DE CHOPP
+=========================== */
+
+.torre-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    width:100%;
+
+    max-width:1100px;
+
+    margin:40px auto;
+
+    background:linear-gradient(135deg,#181818,#0a0a0a);
+
+    border:2px solid #FFD700;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.45),
+        0 0 25px rgba(255,215,0,.10);
+
+}
+
+/* =========================== */
+
+.torre-faixa{
+
+    position:absolute;
+
+    top:28px;
+
+    right:-70px;
+
+    width:240px;
+
+    text-align:center;
+
+    background:linear-gradient(90deg,#ff3300,#ff9800);
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    padding:10px 0;
+
+    transform:rotate(40deg);
+
+    box-shadow:0 8px 20px rgba(255,90,0,.45);
+
+    z-index:5;
+
+}
+
+/* =========================== */
+
+.torre-conteudo{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:45px;
+
+    padding:45px;
+
+}
+
+/* =========================== */
+
+.torre-badge{
+
+    display:inline-block;
+
+    background:#FFD700;
+
+    color:#111;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+.torre-titulo{
+
+    color:#FFD700;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.torre-litros{
+
+    color:#ddd;
+
+    font-size:22px;
+
+    margin-bottom:30px;
+
+}
+
+/* =========================== */
+
+.torre-beneficios{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.torre-item{
+
+    background:#1d1d1d;
+
+    border-left:4px solid #FFD700;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    color:#eee;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.torre-item:hover{
+
+    transform:translateY(-4px);
+
+    background:#262626;
+
+}
+
+/* =========================== */
+
+.torre-lateral{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+/* =========================== */
+
+.torre-preco{
+
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:linear-gradient(180deg,#453300,#141414);
+
+    border:2px solid #FFD700;
+
+    animation:precoPulse 2s infinite;
+
+}
+
+.torre-preco-label{
+
+    display:block;
+
+    color:#FFD700;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    margin-bottom:12px;
+
+}
+
+.torre-preco-valor{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    color:#fff;
+
+}
+
+.torre-preco-valor small{
+
+    font-size:28px;
+
+    margin-top:18px;
+
+    color:#FFD700;
+
+}
+
+.torre-preco-valor strong{
+
+    font-size:82px;
+
+    line-height:1;
+
+    color:#fff;
+
+    text-shadow:0 0 20px rgba(255,215,0,.5);
+
+}
+
+.torre-preco-valor sup{
+
+    font-size:32px;
+
+    margin-top:12px;
+
+    color:#FFD700;
+
+}
+
+.torre-preco p{
+
+    margin-top:15px;
+
+    color:#ddd;
+
+}
+
+/* =========================== */
+
+.torre-btn{
+
+    margin-top:25px;
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#c40000,#ff2d2d);
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.torre-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(255,0,0,.45);
+
+}
+
+/* =========================== */
+
+@keyframes precoPulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.03);
+
+    }
+
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:900px){
+
+    .torre-conteudo{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .torre-lateral{
+
+        margin-top:20px;
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:600px){
+
+    .torre-conteudo{
+
+        padding:25px;
+
+        gap:25px;
+
+    }
+
+    .torre-faixa{
+
+        width:210px;
+
+        right:-72px;
+
+        top:24px;
+
+        font-size:12px;
+
+    }
+
+    .torre-titulo{
+
+        font-size:30px;
+
+        text-align:center;
+
+    }
+
+    .torre-litros{
+
+        text-align:center;
+
+        font-size:18px;
+
+    }
+
+    .torre-beneficios{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .torre-preco-valor strong{
+
+        font-size:60px;
+
+    }
+
+    .torre-preco-valor small{
+
+        font-size:22px;
+
+    }
+
+    .torre-preco-valor sup{
+
+        font-size:26px;
+
+    }
+
+}
+.torre-card{
+    line-height: 1.6;
+}
+
+
+
 .batata-650g {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
