@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia da Sinuca - Cardápio Interativo</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===========================
+       RESET & VARIÁVEIS
+    =========================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+
+    :root {
+      --bg-dark: #000000;
+      --bg-card: #141418;
+      --vermelho-brand: #ff0000;
+      --vermelho-hover: #cc0000;
+      --verde-preco: #00ff66;
+      --ouro: #FFD700;
+      --texto-principal: #ffffff;
+      --texto-secundario: #ccc;
+    }
+
+    body {
+      color: var(--texto-principal);
+      background: var(--bg-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===========================
+       HEADER & LOGO
+    =========================== */
+    header {
+      padding: 30px 15px 20px;
+      text-align: center;
+      background: radial-gradient(circle, rgba(255, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 90%);
+    }
+
+    .logo img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.4));
+    }
+
+    .subtitulo {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--texto-secundario);
+      letter-spacing: 1px;
+    }
+
+    /* ===========================
+       BARRA DE BUSCA & NAVEGAÇÃO DE CATEGORIAS
+    =========================== */
+    .filtros-container {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+      padding: 12px 0;
+    }
+
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 10px;
+      padding: 0 15px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 0, 0, 0.5);
+      background: #111;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--vermelho-brand);
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    .nav-categorias {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 5px 15px;
+      max-width: 1100px;
+      margin: 0 auto;
+      scrollbar-width: none;
+    }
+
+    .nav-categorias::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ccc;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 13px;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn.active, .nav-btn:hover {
+      background: var(--vermelho-brand);
+      color: #fff;
+      border-color: var(--vermelho-brand);
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+    }
+
+    /* ===========================
+       LAYOUT CONTAINER
+    =========================== */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .categoria {
+      margin-bottom: 40px;
+    }
+
+    .categoria h2 {
+      color: var(--vermelho-brand);
+      margin-bottom: 20px;
+      border-left: 5px solid var(--vermelho-brand);
+      padding-left: 12px;
+      font-size: 28px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ===========================
+       GRID DE CARDS
+    =========================== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .card {
+      border: 2px solid var(--vermelho-brand);
+      border-radius: 15px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+      position: relative;
+    }
+
+    .card h3 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 22px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .card p {
+      color: var(--texto-secundario);
+      margin-bottom: 15px;
+      line-height: 1.5;
+      font-size: 14px;
+      flex-grow: 1;
+    }
+
+    .preco {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--verde-preco);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+
+    /* ===========================
+       ANIMAÇÕES & COMBOS
+    =========================== */
+    .animation {
+      animation: pulsar 2s ease-in-out infinite;
+    }
+
+    @keyframes pulsar {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+      }
+      50% {
+        transform: scale(1.02);
+        box-shadow: 0 8px 24px rgba(255, 0, 0, 0.7);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+      }
+    }
+
+    .combos {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      border: none;
+      background: #141418;
+    }
+
+    .combos::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        transparent 0deg,
+        transparent 200deg,
+        #8B6B00 240deg,
+        #FFD700 300deg,
+        #FFF8DC 360deg
+      );
+      animation: girar 4s linear infinite;
+      z-index: 1;
+    }
+
+    .combos::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      border-radius: 13px;
+      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img-19.webp');
+      background-size: cover;
+      background-position: center;
+      z-index: 2;
+    }
+
+    .combos > * {
+      position: relative;
+      z-index: 3;
+    }
+
+    @keyframes girar {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* ===========================
+       TORRE DE CHOPP
+    =========================== */
+    .torre-card {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin: 40px 0;
+      background: linear-gradient(135deg, #181818, #0a0a0a);
+      border: 2px solid var(--ouro);
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.45), 0 0 25px rgba(255,215,0,.15);
+      line-height: 1.6;
+    }
+
+    .torre-faixa {
+      position: absolute;
+      top: 28px;
+      right: -70px;
+      width: 240px;
+      text-align: center;
+      background: linear-gradient(90deg, #ff3300, #ff9800);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      padding: 10px 0;
+      transform: rotate(40deg);
+      box-shadow: 0 8px 20px rgba(216, 32, 0, 0.45);
+      z-index: 5;
+    }
+
+    .torre-conteudo {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 45px;
+      padding: 45px;
+    }
+
+    .torre-titulo {
+      color: var(--ouro);
+      font-size: 38px;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 10px;
+    }
+
+    .torre-litros {
+      color: #ddd;
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .torre-beneficios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .torre-item {
+      background: #1d1d1d;
+      border-left: 4px solid var(--ouro);
+      border-radius: 12px;
+      padding: 15px;
+      color: #eee;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .torre-item:hover {
+      transform: translateY(-4px);
+      background: #262626;
+    }
+
+    .torre-lateral {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .torre-preco-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      border-radius: 20px;
+      background: rgba(255, 215, 0, 0.03);
+      background-image: linear-gradient(145deg, rgba(255, 215, 0, 0.08) 0%, rgba(0, 0, 0, 0.6) 100%);
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.4s ease;
+    }
+
+    .torre-preco-box:hover {
+      border-color: var(--ouro);
+      box-shadow: 0 12px 35px rgba(255, 215, 0, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .preco-badge {
+      color: var(--ouro);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .torre-preco-valor {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .torre-preco-valor small {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-right: 2px;
+      color: var(--ouro);
+    }
+
+    .torre-preco-valor strong {
+      font-size: 72px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: #ffffff;
+      text-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+    }
+
+    .torre-preco-valor sup {
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 10px;
+      color: var(--ouro);
+    }
+
+    /* ===========================
+       IMAGENS DE FUNDO DOS CARDS
+    =========================== */
+    .batata-650g, .batata-350g { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-1.webp') center 65%/cover no-repeat; }
+    .pizza { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-18.webp') center 65%/cover no-repeat; }
+    .croquete { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-34.webp') center 65%/cover no-repeat; } 
+    .pastelzinho { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-3.webp') center 80%/cover no-repeat; }
+    .cerveja-reineken, .cerveja-heineken-long { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-6.webp') center 60%/cover no-repeat; }
+    .cerveja-heineken-long-zero { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-33.webp') center 60%/cover no-repeat; }
+    .cerveja-original { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-35.webp') center 60%/cover no-repeat; }
+    .cerveja-bud, .cerveja-bud-long { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-7.webp') center 80%/cover no-repeat; }
+    .cerveja-brahma { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-12.webp') center 80%/cover no-repeat; }
+    .cerveja-amstel { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-13.webp') center/cover no-repeat; }
+    .cerveja-polar { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-14.webp') center/cover no-repeat; }
+    .cerveja-corona { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-8.webp') 40% 45%/cover no-repeat; }
+    .coca-cola-600 { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-9.webp') center/cover no-repeat; }
+    .coca-cola-lata { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-10.webp') center/cover no-repeat; }
+    .coca-cola-290 { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-15.webp') center/cover no-repeat; }
+    .fys { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-32.webp') center 50%/cover no-repeat; }
+    .pepsi { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-20.webp') center 50%/cover no-repeat; }
+    .fanta { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-22.webp') center 50%/cover no-repeat; }
+    .guarana { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-21.webp') center 50%/cover no-repeat; }
+    .sprite { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-23.webp') center 50%/cover no-repeat; }
+    .redbull { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-5.webp') center/cover no-repeat; }
+    .monster { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-4.webp') center/cover no-repeat; }
+    .baly { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-17.webp') center 50%/cover no-repeat; }
+    .jackdaniels { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-36.webp') center 50%/cover no-repeat; }
+    .redlabel { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-37.webp') center 50%/cover no-repeat; }
+    .whitehourse { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-38.webp') center 50%/cover no-repeat; }
+    .absolut { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-39.webp') center 50%/cover no-repeat; }
+    .passport { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-40.webp') center 50%/cover no-repeat; }
+    .blackfire { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-41.webp') center 50%/cover no-repeat; }
+    .chopp { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img-30.webp') center 50%/cover no-repeat; }
+    .beats { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-24.webp') center 50%/cover no-repeat; }
+    .agua { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-28.webp') center 50%/cover no-repeat; }
+    .h2oh { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-27.webp') center 50%/cover no-repeat; }
+    .delvalle { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-29.webp') center 50%/cover no-repeat; }
+
+    .mesa-semi { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img-11.webp') center 65%/cover no-repeat; }
+    .mesa-pro { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img-16.webp') center 60%/cover no-repeat; }
+    .extra { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img-31.webp') center 60%/cover no-repeat; }
+
+    /* ===========================
+       BOTÃO VOLTAR AO TOPO (CENTRALIZADO)
+    =========================== */
+    #btnTopo {
+      display: none; /* Controlado pelo JavaScript */
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid var(--vermelho-brand);
+      outline: none;
+      background: rgba(20, 0, 0, 0.85);
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    #btnTopo:hover {
+      transform: translateY(-3px);
+      background: var(--vermelho-brand);
+      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.8);
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #0a0a0a;
+      margin-top: 40px;
+      border-top: 2px solid var(--vermelho-brand);
+    }
+
+    footer p {
+      margin: 8px 0;
+      color: var(--texto-secundario);
+      font-size: 14px;
+    }
+
+    .instagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .instagram a {
+      display: flex;
+      align-items: center;
+    }
+
+    /* ===========================
+       MEDIA QUERIES (RESPONSIVIDADE)
+    =========================== */
+    @media (max-width: 900px) {
+      .torre-conteudo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .torre-lateral {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+
+      .categoria h2 {
+        font-size: 22px;
+      }
+
+      .torre-conteudo {
+        padding: 25px 15px;
+        gap: 20px;
+      }
+
+      .torre-faixa {
+        width: 180px;
+        right: -55px;
+        top: 18px;
+        font-size: 10px;
+      }
+
+      .torre-titulo {
+        font-size: 26px;
+        text-align: center;
+      }
+
+      .torre-litros {
+        text-align: center;
+        font-size: 16px;
+      }
+
+      .torre-beneficios {
+        grid-template-columns: 1fr;
+      }
+
+      .torre-preco-valor strong {
+        font-size: 58px;
+      }
+
+      .torre-preco-valor small {
+        font-size: 20px;
+      }
+
+      .torre-preco-valor sup {
+        font-size: 22px;
+      }
+
+      #btnTopo {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo-academia.webp" alt="Logo Academia da Sinuca">
+    </div>
+    <p class="subtitulo">🎱 Suas melhores partidas são aqui! </p>
+  </header>
+
+  <!-- BARRA DE FILTROS E PESQUISA -->
+  <div class="filtros-container">
+    <div class="search-box">
+      <input type="text" id="inputPesquisa" onkeyup="pesquisarCardapio()" placeholder="🔍 Buscar item ou bebida...">
+    </div>
+    
+    <nav class="nav-categorias">
+      <button class="nav-btn active" onclick="filtrarCategoria('todas', this)">🔥 Todos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-combos', this)">🎱 Combos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-torre', this)">🍺 Torre de Chopp</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-petiscos', this)">🍟 Petiscos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-copao', this)">🍹 Copão</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-cervejas', this)">🍺 Cervejas</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-refrigerantes', this)">🥤 Refrigerantes</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-energeticos', this)">⚡ Energéticos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-bebidas', this)">🧃 Bebidas em Geral</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-mesas', this)">🎱 Mesas</button>
+    </nav>
+  </div>
+
+  <div class="container">
+    
+    <!-- COMBOS -->
+    <section class="categoria" id="cat-combos">
+      <h2>🎱 Combos</h2>
+      <div class="cards">
+        <div class="card animation combos">
+          <h3>Combo Pro</h3>
+          <p>1 Hora Mesa Profissional + Batata 450g + Cerveja Litrão</p>
+          <div class="preco">R$ 54,90</div>
+        </div>
+
+        <div class="card animation combos">
+          <h3>Combo Semi Pro</h3>
+          <p>1 Hora Mesa Semi Profissional + Batata 450g + Cerveja Litrão</p>
+          <div class="preco">R$ 44,90</div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- TORRE DE CHOPP -->
+    <section class="categoria" id="cat-torre">
+      <div class="torre-card">
+        <div class="torre-faixa">Novidade</div>
+        <div class="torre-conteudo">
+          <div class="torre-info">
+            <h2 class="torre-titulo">🍺 Torre de Chopp</h2>
+            <p class="torre-litros">1,5 Litros de Chopp Gelado</p>
+            <div class="torre-beneficios">
+              <div class="torre-item">❄️ Sempre trincando</div>
+              <div class="torre-item">👥 Ideal para compartilhar</div>
+              <div class="torre-item">🎱 A combinação perfeita para suas partidas</div>
+              <div class="torre-item">⭐ Produto exclusivo da Academia da Sinuca</div>
+            </div>
+          </div>
+          <div class="torre-lateral">
+            <div class="torre-preco-box">
+              <span class="preco-badge">OFERTA DA CASA</span>
+              <div class="torre-preco-valor">
+                <small>R$</small>
+                <strong>49</strong>
+                <sup>,90</sup>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PETISCOS -->
+    <section class="categoria" id="cat-petiscos">
+      <h2>🍟 Petiscos</h2>
+      <div class="cards">
+        <div class="card pizza">
+          <h3>Pizza</h3>
+          <p>Pizza inteira sabor calabresa 25cm</p>
+          <div class="preco">R$ 34,90</div>
+        </div>
+
+        <div class="card batata-650g">
+          <h3>Batata Frita 650g</h3>
+          <p>Porção crocante e saborosa</p>
+          <div class="preco">R$ 29,90</div>
+        </div>
+
+        <div class="card pastelzinho">
+          <h3>Pastelzinho</h3>
+          <p>Pastelzinhos de carne contendo 10 unidades</p>
+          <div class="preco">R$ 26,90</div>
+        </div>
+
+        <div class="card batata-350g">
+          <h3>Batata Frita 350g</h3>
+          <p>Porção crocante e saborosa</p>
+          <div class="preco">R$ 23,00</div>
+        </div>
+
+        <div class="card croquete">
+          <h3>Croquete Tradicional</h3>
+          <p>Croquete de carne</p>
+          <div class="preco">R$ 9,90</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COPÃO -->
+    <section class="categoria" id="cat-copao">
+      <h2>🍹 Copão</h2>
+      <div class="cards">
+        <div class="card copao jackdaniels">
+          <h3>Copão Jack Daniel's</h3>
+          <p>Copão de 700ml com energético, gelo filtrado e dose Jack Daniel's</p>
+          <div class="preco">R$ 31,90</div>
+        </div>
+
+        <div class="card copao redlabel">
+          <h3>Copão Red Label</h3>
+          <p>Copão de 700ml com energético, gelo filtrado e dose Red Label</p>
+          <div class="preco">R$ 29,90</div>
+        </div>
+
+        <div class="card copao whitehourse">
+          <h3>Copão White Horse</h3>
+          <p>Copão de 700ml com energético, gelo filtrado e dose White Horse</p>
+          <div class="preco">R$ 26,90</div>
+        </div>
+
+        <div class="card copao absolut">
+          <h3>Copão Absolut</h3>
+          <p>Copão de 700ml com energético, gelo filtrado e dose Absolut</p>
+          <div class="preco">R$ 25,90</div>
+        </div>
+
+        <div class="card copao passport">
+          <h3>Copão Passport</h3>
+          <p>Copão de 700ml com energético, gelo filtrado e dose Passport</p>
+          <div class="preco">R$ 24,90</div>
+        </div>
+
+        <div class="card copao blackfire">
+          <h3>Copão Black Fire</h3>
+          <p>Copão de 700ml com energético, gelo filtrado e dose Black Fire</p>
+          <div class="preco">R$ 19,90</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERVEJAS -->
+    <section class="categoria" id="cat-cervejas">
+      <h2>🍺 Cervejas</h2>
+      <div class="cards">
+        <div class="card cerveja-reineken">
+          <h3>Heineken 600ml</h3>
+          <p>Cerveja gelada 600ml</p>
+          <div class="preco">R$ 19,90</div>
+        </div>
+
+        <div class="card cerveja-original">
+          <h3>Original Litrão</h3>
+          <p>Cerveja gelada 1 litro</p>
+          <div class="preco">R$ 19,90</div>
+        </div>
+
+        <div class="card cerveja-bud">
+          <h3>Budweiser Litrão</h3>
+          <p>Cerveja gelada 1 litro</p>
+          <div class="preco">R$ 19,90</div>
+        </div>
+
+        <div class="card cerveja-brahma">
+          <h3>Brahma Litrão</h3>
+          <p>Cerveja gelada 1 litro</p>
+          <div class="preco">R$ 15,90</div>
+        </div>
+
+        <div class="card cerveja-amstel">
+          <h3>Amstel Litrão</h3>
+          <p>Cerveja gelada 1 litro</p>
+          <div class="preco">R$ 14,90</div>
+        </div>
+
+        <div class="card cerveja-polar">
+          <h3>Polar Litrão</h3>
+          <p>Cerveja gelada 1 litro</p>
+          <div class="preco">R$ 15,90</div>
+        </div>
+
+        <div class="card cerveja-corona">
+          <h3>Corona Longneck 330ml</h3>
+          <p>Cerveja gelada</p>
+          <div class="preco">R$ 11,90</div>
+        </div>
+
+        <div class="card cerveja-heineken-long">
+          <h3>Heineken Longneck 330ml</h3>
+          <p>Cerveja gelada</p>
+          <div class="preco">R$ 11,90</div>
+        </div>
+
+        <div class="card cerveja-heineken-long-zero">
+          <h3>Heineken Longneck Zero 330ml</h3>
+          <p>Cerveja gelada</p>
+          <div class="preco">R$ 11,90</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFRIGERANTES -->
+    <section class="categoria" id="cat-refrigerantes">
+      <h2>🥤 Refrigerantes</h2>
+      <div class="cards">
+        <div class="card coca-cola-600">
+          <h3>Coca Cola 600ml</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 9,90</div>
+        </div>
+
+        <div class="card coca-cola-lata">
+          <h3>Coca Cola Lata</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 7,00</div>
+        </div>
+
+        <div class="card coca-cola-290">
+          <h3>Coca Cola 290ml</h3>
+          <p>Refrigerante gelado de vidro</p>
+          <div class="preco">R$ 7,50</div>
+        </div>
+
+        <div class="card fys">
+          <h3>Fys</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 7,00</div>
+        </div>
+
+        <div class="card pepsi">
+          <h3>Pepsi Lata</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 6,90</div>
+        </div>
+
+        <div class="card fanta">
+          <h3>Fanta Lata</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 6,90</div>
+        </div>
+
+        <div class="card guarana">
+          <h3>Guaraná Lata</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 6,90</div>
+        </div>
+
+        <div class="card sprite">
+          <h3>Sprite Lata</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 7,00</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENERGÉTICOS -->
+    <section class="categoria" id="cat-energeticos">
+      <h2>⚡ Energéticos</h2>
+      <div class="cards">
+        <div class="card monster">
+          <h3>Monster 473ml</h3>
+          <p>Energético gelado</p>
+          <div class="preco">R$ 16,90</div>
+        </div>
+
+        <div class="card redbull">
+          <h3>RedBull</h3>
+          <p>Energético gelado</p>
+          <div class="preco">R$ 15,90</div>
+        </div>
+
+        <div class="card baly">
+          <h3>Baly 437ml</h3>
+          <p>Energético gelado</p>
+          <div class="preco">R$ 13,90</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEBIDAS EM GERAL -->
+    <section class="categoria" id="cat-bebidas">
+      <h2>🧃 Bebidas em Geral</h2>
+      <div class="cards">
+        <div class="card chopp">
+          <h3>Chopp</h3>
+          <p>Caneca de Chopp gelado 500ml</p>
+          <div class="preco">R$ 11,90</div>
+        </div>
+
+        <div class="card beats">
+          <h3>Skol Beats</h3>
+          <p>Skol beats senses, red mix, green mix e tropical</p>
+          <div class="preco">R$ 14,00</div>
+        </div>
+
+        <div class="card agua">
+          <h3>Água</h3>
+          <p>Água com gás ou sem</p>
+          <div class="preco">R$ 3,00</div>
+        </div>
+
+        <div class="card h2oh">
+          <h3>H2OH</h3>
+          <p>Refrigerante de baixa calória gelado</p>
+          <div class="preco">R$ 7,00</div>
+        </div>
+
+        <div class="card delvalle">
+          <h3>Del Valle Lata</h3>
+          <p>Suco gostoso e refrescante</p>
+          <div class="preco">R$ 7,50</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MESAS -->
+    <section class="categoria" id="cat-mesas">
+      <h2>🎱 Mesas</h2>
+      <div class="cards">
+        <div class="card mesa-pro">
+          <h3>Mesa Pro Hora</h3>
+          <p>Opção certa para quem deseja ir além e jogar como os profissionais jogam</p>
+          <div class="preco">R$ 30,00</div>
+        </div>
+
+        <div class="card mesa-semi">
+          <h3>Mesa Semi Pro Hora</h3>
+          <p>Opção certa para se divertir com os amigos e dar boas risadas</p>
+          <div class="preco">R$ 20,00</div>
+        </div>
+
+        <div class="card extra">
+          <h3>Partida Extra</h3>
+          <p>Faça um story no Instagram mencionando a Academia da Sinuca e jogue uma partida sem nenhum custo</p>
+          <div class="preco">R$ 00,00</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button onclick="voltaAoTopo()" id="btnTopo" title="Voltar ao topo">▲</button>
+
+  <footer>
+    <p class="instagram">
+      <a href="https://instagram.com/academiadasinucapel" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ff0000" viewBox="0 0 24 24">
+          <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5C18.33 4 20 5.67 20 7.75v8.5C20 18.33 18.33 20 16.25 20h-8.5C5.67 20 4 18.33 4 16.25v-8.5C4 5.67 5.67 4 7.75 4zm8.75 1a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
+        </svg>
+      </a>
+      Instagram: @academiadasinucapel
+    </p>
+    <p>📍 Rua Santa Clara 273 - Sala 3 - Pelotas</p>
+    <p>🔒 Ambiente fechado e controlado</p>
+  </footer>
+
+  <!-- SCRIPT INTERATIVO (SEM ENVIO DE PEDIDO) -->
+  <script>
+    // 1. FILTRAR POR CATEGORIA (ABAS)
+    function filtrarCategoria(idCategoria, elementoBtn) {
+      // Atualiza estado visual dos botões
+      const botoes = document.querySelectorAll('.nav-btn');
+      botoes.forEach(btn => btn.classList.remove('active'));
+      if (elementoBtn) elementoBtn.classList.add('active');
+
+      // Limpa a busca ao trocar de categoria
+      document.getElementById('inputPesquisa').value = '';
+
+      const secoes = document.querySelectorAll('.categoria');
+      secoes.forEach(secao => {
+        const cards = secao.querySelectorAll('.card');
+        cards.forEach(card => card.style.display = 'flex');
+
+        if (idCategoria === 'todas' || secao.id === idCategoria) {
+          secao.style.display = 'block';
+        } else {
+          secao.style.display = 'none';
+        }
+      });
+    }
+
+    // 2. BUSCA/PESQUISA EM TEMPO REAL
+    function pesquisarCardapio() {
+      const termo = document.getElementById('inputPesquisa').value.toLowerCase().trim();
+      const secoes = document.querySelectorAll('.categoria');
+
+      // Reseta ativo dos botões ao pesquisar
+      if (termo.length > 0) {
+        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      }
+
+      secoes.forEach(secao => {
+        let possuiItemVisivel = false;
+        const cards = secao.querySelectorAll('.card');
+
+        cards.forEach(card => {
+          const titulo = card.querySelector('h3') ? card.querySelector('h3').innerText.toLowerCase() : '';
+          const descricao = card.querySelector('p') ? card.querySelector('p').innerText.toLowerCase() : '';
+
+          if (titulo.includes(termo) || descricao.includes(termo)) {
+            card.style.display = 'flex';
+            possuiItemVisivel = true;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Mostra a seção inteira se houver correspondência dentro dela
+        if (possuiItemVisivel) {
+          secao.style.display = 'block';
+        } else {
+          secao.style.display = 'none';
+        }
+      });
+    }
+
+    // 3. EXIBIÇÃO DO BOTÃO VOLTAR AO TOPO
+    const btnTopo = document.getElementById("btnTopo");
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btnTopo.style.display = "flex";
+      } else {
+        btnTopo.style.display = "none";
+      }
+    };
+
+    function voltaAoTopo() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+
+</html>
