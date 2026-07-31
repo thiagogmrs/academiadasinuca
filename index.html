@@ -4,25 +4,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Academia da Sinuca - Cardápio</title>
+  <title>Academia da Sinuca - Cardápio Interativo</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
   <header>
-    <div class="logo"><img src="logo-academia.webp" alt="Logo Academia da Sinuca"></div>
+    <div class="logo">
+      <img src="logo-academia.webp" alt="Logo Academia da Sinuca">
+    </div>
+    <p class="subtitulo">🎱 Suas melhores partidas são aqui! </p>
   </header>
+
+  <!-- BARRA DE FILTROS E PESQUISA -->
+  <div class="filtros-container">
+    <div class="search-box">
+      <input type="text" id="inputPesquisa" onkeyup="pesquisarCardapio()" placeholder="🔍 Buscar item ou bebida...">
+    </div>
+    
+    <nav class="nav-categorias">
+      <button class="nav-btn active" onclick="filtrarCategoria('todas', this)">🔥 Todos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-combos', this)">🎱 Combos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-torre', this)">🍺 Torre de Chopp</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-petiscos', this)">🍟 Petiscos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-copao', this)">🍹 Copão</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-cervejas', this)">🍺 Cervejas</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-refrigerantes', this)">🥤 Refrigerantes</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-energeticos', this)">⚡ Energéticos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-bebidas', this)">🧃 Bebidas em Geral</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-mesas', this)">🎱 Mesas</button>
+    </nav>
+  </div>
 
   <div class="container">
     
     <!-- COMBOS -->
-    <section class="categoria">
+    <section class="categoria" id="cat-combos">
       <h2>🎱 Combos</h2>
-
       <div class="cards">
-
         <div class="card animation combos">
           <h3>Combo Pro</h3>
           <p>1 Hora Mesa Profissional + Batata 450g + Cerveja Litrão</p>
@@ -34,51 +60,42 @@
           <p>1 Hora Mesa Semi Profissional + Batata 450g + Cerveja Litrão</p>
           <div class="preco">R$ 44,90</div>
         </div>
-
       </div>
     </section>
  
     <!-- TORRE DE CHOPP -->
-    <section class="torre-card">
-
-      <div class="torre-faixa">Novidade</div>
-
-      <div class="torre-conteudo">
-
-        <div class="torre-info">
-          <h2 class="torre-titulo">🍺 Torre de Chopp</h2>
-          <p class="torre-litros">1,5 Litros de Chopp Gelado</p>
-
-          <div class="torre-beneficios">
-            <div class="torre-item">❄️ Sempre trincando</div>
-            <div class="torre-item">👥 Ideal para compartilhar</div>
-            <div class="torre-item">🎱 A combinação perfeita para suas partidas</div>
-            <div class="torre-item">⭐ Produto exclusivo da Academia da Sinuca</div>
+    <section class="categoria" id="cat-torre">
+      <div class="torre-card">
+        <div class="torre-faixa">EM BREVE!</div>
+        <div class="torre-conteudo">
+          <div class="torre-info">
+            <h2 class="torre-titulo">🍺 Torre de Chopp</h2>
+            <p class="torre-litros">1,5 Litros de Chopp Gelado</p>
+            <div class="torre-beneficios">
+              <div class="torre-item">❄️ Sempre trincando</div>
+              <div class="torre-item">👥 Ideal para compartilhar</div>
+              <div class="torre-item">🎱 A combinação perfeita para suas partidas</div>
+              <div class="torre-item">⭐ Produto exclusivo da Academia da Sinuca</div>
+            </div>
           </div>
-        </div>
-
-        <div class="torre-lateral">
-          <div class="torre-preco-box">
-            <span class="preco-badge">OFERTA DA CASA</span>
-            
-            <div class="torre-preco-valor">
-              <small>R$</small>
-              <strong>49</strong>
-              <sup>,90</sup>
+          <div class="torre-lateral">
+            <div class="torre-preco-box">
+              <span class="preco-badge">OFERTA DA CASA</span>
+              <div class="torre-preco-valor">
+                <small>R$</small>
+                <strong>49</strong>
+                <sup>,90</sup>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-
     </section>
 
     <!-- PETISCOS -->
-    <section class="categoria">
+    <section class="categoria" id="cat-petiscos">
       <h2>🍟 Petiscos</h2>
-
       <div class="cards">
-
         <div class="card pizza">
           <h3>Pizza</h3>
           <p>Pizza inteira sabor calabresa 25cm</p>
@@ -102,21 +119,13 @@
           <p>Porção crocante e saborosa</p>
           <div class="preco">R$ 23,00</div>
         </div>
-
-        <div class="card croquete">
-          <h3>Croquete Tradicional</h3>
-          <p>Croquete de carne</p>
-          <div class="preco">R$ 9,90</div>
-        </div>
-
       </div>
     </section>
 
     <!-- COPÃO -->
-    <section class="categoria">
+    <section class="categoria" id="cat-copao">
       <h2>🍹 Copão</h2>
       <div class="cards">
-
         <div class="card copao jackdaniels">
           <h3>Copão Jack Daniel's</h3>
           <p>Copão de 700ml com energético, gelo filtrado e dose Jack Daniel's</p>
@@ -152,14 +161,12 @@
           <p>Copão de 700ml com energético, gelo filtrado e dose Black Fire</p>
           <div class="preco">R$ 19,90</div>
         </div>
-
       </div>
     </section>
 
     <!-- CERVEJAS -->
-    <section class="categoria">
+    <section class="categoria" id="cat-cervejas">
       <h2>🍺 Cervejas</h2>
-
       <div class="cards">
         <div class="card cerveja-reineken">
           <h3>Heineken 600ml</h3>
@@ -218,7 +225,7 @@
     </section>
 
     <!-- REFRIGERANTES -->
-    <section class="categoria">
+    <section class="categoria" id="cat-refrigerantes">
       <h2>🥤 Refrigerantes</h2>
       <div class="cards">
         <div class="card coca-cola-600">
@@ -272,7 +279,7 @@
     </section>
 
     <!-- ENERGÉTICOS -->
-    <section class="categoria">
+    <section class="categoria" id="cat-energeticos">
       <h2>⚡ Energéticos</h2>
       <div class="cards">
         <div class="card monster">
@@ -296,10 +303,9 @@
     </section>
 
     <!-- BEBIDAS EM GERAL -->
-    <section class="categoria">
+    <section class="categoria" id="cat-bebidas">
       <h2>🧃 Bebidas em Geral</h2>
       <div class="cards">
-
         <div class="card chopp">
           <h3>Chopp</h3>
           <p>Caneca de Chopp gelado 500ml</p>
@@ -329,15 +335,13 @@
           <p>Suco gostoso e refrescante</p>
           <div class="preco">R$ 7,50</div>
         </div>
-
       </div>
     </section>
 
     <!-- MESAS -->
-    <section class="categoria">
+    <section class="categoria" id="cat-mesas">
       <h2>🎱 Mesas</h2>
       <div class="cards">
-
         <div class="card mesa-pro">
           <h3>Mesa Pro Hora</h3>
           <p>Opção certa para quem deseja ir além e jogar como os profissionais jogam</p>
@@ -355,31 +359,27 @@
           <p>Faça um story no Instagram mencionando a Academia da Sinuca e jogue uma partida sem nenhum custo</p>
           <div class="preco">R$ 00,00</div>
         </div>
-
       </div>
     </section>
 
   </div>
 
-  <!-- CONTAINER DE BOTÕES FLUTUANTES NO CANTO DIREITO -->
-  <div class="botoes-flutuantes">
-    <!-- Botão Instagram -->
-    <a href="https://instagram.com/academiadasinucapel" target="_blank" class="btn-flutuante btn-instagram" title="Siga no Instagram">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5C18.33 4 20 5.67 20 7.75v8.5C20 18.33 18.33 20 16.25 20h-8.5C5.67 20 4 18.33 4 16.25v-8.5C4 5.67 5.67 4 7.75 4zm8.75 1a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
-      </svg>
-    </a>
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP (LADO DIREITO) -->
+  <a href="https://wa.me/5553991839981" target="_blank" class="btn-whatsapp" title="Falar no WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.17-.478 1.338-.94.166-.462.166-.856.116-.94-.05-.083-.182-.148-.38-.247z"/>
+    </svg>
+  </a>
 
-    <!-- Botão WhatsApp -->
-    <a href="https://wa.me/5553999999999" target="_blank" class="btn-flutuante btn-whatsapp" title="Fale conosco no WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-      </svg>
-    </a>
+  <!-- BOTÃO FLUTUANTE DO INSTAGRAM (LADO DIREITO) -->
+  <a href="https://instagram.com/academiadasinucapel" target="_blank" class="btn-instagram" title="Siga no Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5C18.33 4 20 5.67 20 7.75v8.5C20 18.33 18.33 20 16.25 20h-8.5C5.67 20 4 18.33 4 16.25v-8.5C4 5.67 5.67 4 7.75 4zm8.75 1a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+    </svg>
+  </a>
 
-    <!-- Botão Voltar ao Topo -->
-    <button onclick="voltaAoTopo()" id="btnTopo" title="Voltar ao topo">↑</button>
-  </div>
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button onclick="voltaAoTopo()" id="btnTopo" title="Voltar ao topo">▲</button>
 
   <footer>
     <p class="instagram">
@@ -393,7 +393,6 @@
     <p>📍 Rua Santa Clara 273 - Sala 3 - Pelotas</p>
     <p>🔒 Ambiente fechado e controlado</p>
   </footer>
-
   <script src="main.js"></script>
 </body>
 
