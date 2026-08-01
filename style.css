@@ -96,7 +96,9 @@ header {
   scrollbar-width: none;
 }
 
-.nav-categorias::-webkit-scrollbar { display: none; }
+.nav-categorias::-webkit-scrollbar {
+  display: none;
+}
 
 .nav-btn {
   background: rgba(255, 255, 255, 0.08);
@@ -111,7 +113,8 @@ header {
   transition: all 0.3s ease;
 }
 
-.nav-btn.active, .nav-btn:hover {
+.nav-btn.active,
+.nav-btn:hover {
   background: var(--vermelho-brand);
   color: #fff;
   border-color: var(--vermelho-brand);
@@ -119,7 +122,7 @@ header {
 }
 
 /* ===========================
-   LAYOUT CONTAINER
+   LAYOUT CONTAINER E CATEGORIAS
 =========================== */
 .container {
   width: 100%;
@@ -142,7 +145,7 @@ header {
 }
 
 /* ===========================
-   GRID DE CARDS
+   GRID DE CARDS PADRÃO
 =========================== */
 .cards {
   display: grid;
@@ -152,17 +155,22 @@ header {
 }
 
 .card {
-  border: 2px solid var(--vermelho-brand);
-  border-radius: 15px;
-  padding: 20px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-  width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
   min-height: 220px;
-  position: relative;
+  border: 2px solid var(--vermelho-brand);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
 }
 
 .card h3 {
@@ -184,11 +192,6 @@ header {
   font-size: 26px;
   font-weight: 800;
   color: var(--verde-preco);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
 }
 
 /* ===========================
@@ -244,7 +247,7 @@ header {
   position: absolute;
   inset: 2px;
   border-radius: 13px;
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img-19.webp');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img-19.webp');
   background-size: cover;
   background-position: center;
   z-index: 2;
@@ -265,6 +268,138 @@ header {
 }
 
 /* ===========================
+   DESTAQUE HAMBÚRGUER (NOVIDADE)
+=========================== */
+.hamburguer-destaque-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 40px 0;
+  background: linear-gradient(135deg, #181818, #0a0a0a);
+  border: 2px solid #ff0000;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .45), 0 0 25px rgba(255, 0, 0, .2);
+  line-height: 1.6;
+}
+
+.hamburguer-faixa {
+  position: absolute;
+  top: 28px;
+  right: -70px;
+  width: 240px;
+  text-align: center;
+  background: linear-gradient(90deg, #ff0000, #ff6600);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 10px 0;
+  transform: rotate(40deg);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.45);
+  z-index: 5;
+}
+
+.hamburguer-conteudo {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 45px;
+  padding: 45px;
+}
+
+.hamburguer-titulo {
+  color: #ff3333;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hamburguer-subtitulo {
+  color: #ddd;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.hamburguer-beneficios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.hamburguer-item {
+  background: #1d1d1d;
+  border-left: 4px solid #ff0000;
+  border-radius: 12px;
+  padding: 18px;
+  color: #eee;
+  font-size: 16px;
+  transition: .3s;
+}
+
+.hamburguer-item:hover {
+  transform: translateY(-4px);
+  background: #262626;
+}
+
+.hamburguer-lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hamburguer-preco-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background: rgba(255, 0, 0, 0.03);
+  background-image: linear-gradient(145deg, rgba(255, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.6) 100%);
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  backdrop-filter: blur(5px);
+  transition: all 0.4s ease;
+}
+
+.hamburguer-preco-box:hover {
+  border-color: #ff0000;
+  box-shadow: 0 12px 35px rgba(255, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.hamburguer-preco-valor {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.hamburguer-preco-valor small {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-right: 2px;
+  color: #00ff66;
+}
+
+.hamburguer-preco-valor strong {
+  font-size: 76px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #ffffff;
+  text-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+}
+
+.hamburguer-preco-valor sup {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: #00ff66;
+}
+
+/* ===========================
    TORRE DE CHOPP
 =========================== */
 .torre-card {
@@ -275,7 +410,7 @@ header {
   background: linear-gradient(135deg, #181818, #0a0a0a);
   border: 2px solid var(--ouro);
   border-radius: 22px;
-  box-shadow: 0 15px 40px rgba(0,0,0,.45), 0 0 25px rgba(255,215,0,.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .45), 0 0 25px rgba(255, 215, 0, .15);
   line-height: 1.6;
 }
 
@@ -410,47 +545,46 @@ header {
 /* ===========================
    IMAGENS DE FUNDO DOS CARDS
 =========================== */
-.batata-650g, .batata-350g { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-1.webp') center 65%/cover no-repeat; }
-.pizza { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-18.webp') center 65%/cover no-repeat; }
-.croquete { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-34.webp') center 65%/cover no-repeat; } 
-.pastelzinho { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-3.webp') center 80%/cover no-repeat; }
-.cerveja-reineken, .cerveja-heineken-long { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-6.webp') center 60%/cover no-repeat; }
-.cerveja-heineken-long-zero { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-33.webp') center 60%/cover no-repeat; }
-.cerveja-original { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-35.webp') center 60%/cover no-repeat; }
-.cerveja-bud, .cerveja-bud-long { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-7.webp') center 80%/cover no-repeat; }
-.cerveja-brahma { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-12.webp') center 80%/cover no-repeat; }
-.cerveja-amstel { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-13.webp') center/cover no-repeat; }
-.cerveja-polar { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-14.webp') center/cover no-repeat; }
-.cerveja-corona { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-8.webp') 40% 45%/cover no-repeat; }
-.coca-cola-600 { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-9.webp') center/cover no-repeat; }
-.coca-cola-lata { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-10.webp') center/cover no-repeat; }
-.coca-cola-290 { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-15.webp') center/cover no-repeat; }
-.fys { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-32.webp') center 50%/cover no-repeat; }
-.pepsi { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-20.webp') center 50%/cover no-repeat; }
-.fanta { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-22.webp') center 50%/cover no-repeat; }
-.guarana { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-21.webp') center 50%/cover no-repeat; }
-.sprite { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img-23.webp') center 50%/cover no-repeat; }
-.redbull { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-5.webp') center/cover no-repeat; }
-.monster { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-4.webp') center/cover no-repeat; }
-.baly { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-17.webp') center 50%/cover no-repeat; }
-.jackdaniels { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-36.webp') center 50%/cover no-repeat; }
-.redlabel { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-37.webp') center 50%/cover no-repeat; }
-.whitehourse { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-38.webp') center 50%/cover no-repeat; }
-.absolut { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-39.webp') center 50%/cover no-repeat; }
-.passport { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-40.webp') center 50%/cover no-repeat; }
-.blackfire { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-41.webp') center 50%/cover no-repeat; }
-.chopp { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img-30.webp') center 50%/cover no-repeat; }
-.beats { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-24.webp') center 50%/cover no-repeat; }
-.agua { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-28.webp') center 50%/cover no-repeat; }
-.h2oh { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-27.webp') center 50%/cover no-repeat; }
-.delvalle { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img-29.webp') center 50%/cover no-repeat; }
-
-.mesa-semi { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img-11.webp') center 65%/cover no-repeat; }
-.mesa-pro { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img-16.webp') center 60%/cover no-repeat; }
-.extra { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('img-31.webp') center 60%/cover no-repeat; }
+.batata-650g, .batata-350g { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-1.webp') center 65%/cover no-repeat; }
+.pizza { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-18.webp') center 65%/cover no-repeat; }
+.croquete { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-34.webp') center 65%/cover no-repeat; }
+.pastelzinho { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-3.webp') center 80%/cover no-repeat; }
+.cerveja-reineken, .cerveja-heineken-long { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-6.webp') center 60%/cover no-repeat; }
+.cerveja-heineken-long-zero { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-33.webp') center 60%/cover no-repeat; }
+.cerveja-original { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-35.webp') center 60%/cover no-repeat; }
+.cerveja-bud, .cerveja-bud-long { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-7.webp') center 80%/cover no-repeat; }
+.cerveja-brahma { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-12.webp') center 80%/cover no-repeat; }
+.cerveja-amstel { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-13.webp') center/cover no-repeat; }
+.cerveja-polar { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-14.webp') center/cover no-repeat; }
+.cerveja-corona { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-8.webp') 40% 45%/cover no-repeat; }
+.coca-cola-600 { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-9.webp') center/cover no-repeat; }
+.coca-cola-lata { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-10.webp') center/cover no-repeat; }
+.coca-cola-290 { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-15.webp') center/cover no-repeat; }
+.fys { background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img-32.webp') center 50%/cover no-repeat; }
+.pepsi { background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img-20.webp') center 50%/cover no-repeat; }
+.fanta { background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img-22.webp') center 50%/cover no-repeat; }
+.guarana { background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img-21.webp') center 50%/cover no-repeat; }
+.sprite { background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img-23.webp') center 50%/cover no-repeat; }
+.redbull { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-5.webp') center/cover no-repeat; }
+.monster { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-4.webp') center/cover no-repeat; }
+.baly { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-17.webp') center 50%/cover no-repeat; }
+.jackdaniels { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-36.webp') center 50%/cover no-repeat; }
+.redlabel { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-37.webp') center 50%/cover no-repeat; }
+.whitehourse { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-38.webp') center 50%/cover no-repeat; }
+.absolut { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-39.webp') center 50%/cover no-repeat; }
+.passport { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-40.webp') center 50%/cover no-repeat; }
+.blackfire { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-41.webp') center 50%/cover no-repeat; }
+.chopp { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img-30.webp') center 50%/cover no-repeat; }
+.beats { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-24.webp') center 50%/cover no-repeat; }
+.agua { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-28.webp') center 50%/cover no-repeat; }
+.h2oh { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-27.webp') center 50%/cover no-repeat; }
+.delvalle { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-29.webp') center 50%/cover no-repeat; }
+.mesa-semi { background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('img-11.webp') center 65%/cover no-repeat; }
+.mesa-pro { background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('img-16.webp') center 60%/cover no-repeat; }
+.extra { background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('img-31.webp') center 60%/cover no-repeat; }
 
 /* ===========================
-   BOTÕES FLUTUANTES (WHATSAPP E INSTAGRAM)
+   BOTÕES FLUTUANTES 
 =========================== */
 .btn-whatsapp {
   position: fixed;
@@ -502,7 +636,6 @@ header {
   animation-play-state: paused;
 }
 
-/* Animação suave para os botões flutuantes */
 @keyframes flutuarPulso {
   0%, 100% {
     transform: translateY(0) scale(1);
@@ -516,7 +649,7 @@ header {
    BOTÃO VOLTAR AO TOPO
 =========================== */
 #btnTopo {
-  display: none; /* Controlado pelo JavaScript */
+  display: none;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -580,11 +713,15 @@ footer p {
    MEDIA QUERIES (RESPONSIVIDADE)
 =========================== */
 @media (max-width: 900px) {
-  .torre-conteudo {
+  /* Alinhamento no tablet (aplicado à Torre e ao Hambúrguer) */
+  .torre-conteudo,
+  .hamburguer-conteudo {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  .torre-lateral {
+
+  .torre-lateral,
+  .hamburguer-lateral {
     margin-top: 10px;
   }
 }
@@ -598,15 +735,27 @@ footer p {
     font-size: 22px;
   }
 
-  .torre-conteudo {
+  /* Ajustes Estruturais para Mobile (Torre e Hambúrguer) */
+  .torre-conteudo,
+  .hamburguer-conteudo {
     padding: 25px 15px;
     gap: 20px;
   }
 
-  .torre-faixa {
+  .torre-faixa,
+  .hamburguer-faixa {
     width: 180px;
     right: -55px;
     top: 18px;
+  }
+
+  .torre-beneficios,
+  .hamburguer-beneficios {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajustes Específicos para a Torre de Chopp preservando os tamanhos base */
+  .torre-faixa {
     font-size: 10px;
   }
 
@@ -618,10 +767,6 @@ footer p {
   .torre-litros {
     text-align: center;
     font-size: 16px;
-  }
-
-  .torre-beneficios {
-    grid-template-columns: 1fr;
   }
 
   .torre-preco-valor strong {
@@ -636,6 +781,7 @@ footer p {
     font-size: 22px;
   }
 
+  /* Ajustes dos Botões Flutuantes para Mobile */
   #btnTopo {
     bottom: 130px;
     right: 20px;
