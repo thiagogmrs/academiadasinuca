@@ -267,137 +267,7 @@ header {
   }
 }
 
-/* ===========================
-   DESTAQUE HAMBÚRGUER (NOVIDADE)
-=========================== */
-.hamburguer-destaque-card {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  margin: 40px 0;
-  background: linear-gradient(135deg, #181818, #0a0a0a);
-  border: 2px solid #ff0000;
-  border-radius: 22px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, .45), 0 0 25px rgba(255, 0, 0, .2);
-  line-height: 1.6;
-}
 
-.hamburguer-faixa {
-  position: absolute;
-  top: 28px;
-  right: -70px;
-  width: 240px;
-  text-align: center;
-  background: linear-gradient(90deg, #ff0000, #ff6600);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  padding: 10px 0;
-  transform: rotate(40deg);
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.45);
-  z-index: 5;
-}
-
-.hamburguer-conteudo {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 45px;
-  padding: 45px;
-}
-
-.hamburguer-titulo {
-  color: #ff3333;
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.hamburguer-subtitulo {
-  color: #ddd;
-  font-size: 22px;
-  margin-bottom: 30px;
-}
-
-.hamburguer-beneficios {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.hamburguer-item {
-  background: #1d1d1d;
-  border-left: 4px solid #ff0000;
-  border-radius: 12px;
-  padding: 18px;
-  color: #eee;
-  font-size: 16px;
-  transition: .3s;
-}
-
-.hamburguer-item:hover {
-  transform: translateY(-4px);
-  background: #262626;
-}
-
-.hamburguer-lateral {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hamburguer-preco-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 20px;
-  border-radius: 20px;
-  background: rgba(255, 0, 0, 0.03);
-  background-image: linear-gradient(145deg, rgba(255, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.6) 100%);
-  border: 1px solid rgba(255, 0, 0, 0.4);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  position: relative;
-  backdrop-filter: blur(5px);
-  transition: all 0.4s ease;
-}
-
-.hamburguer-preco-box:hover {
-  border-color: #ff0000;
-  box-shadow: 0 12px 35px rgba(255, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transform: translateY(-4px);
-}
-
-.hamburguer-preco-valor {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 20px;
-}
-
-.hamburguer-preco-valor small {
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-right: 2px;
-  color: #00ff66;
-}
-
-.hamburguer-preco-valor strong {
-  font-size: 76px;
-  font-weight: 900;
-  letter-spacing: -2px;
-  color: #ffffff;
-  text-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
-}
-
-.hamburguer-preco-valor sup {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 10px;
-  color: #00ff66;
-}
 
 /* ===========================
    TORRE DE CHOPP
@@ -542,9 +412,143 @@ header {
   color: var(--ouro);
 }
 
+
+/* ===========================
+   DESTAQUE HAMBÚRGUER (NOVIDADE)
+=========================== */
+.hamburguer-destaque-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 40px 0;
+  background: linear-gradient(135deg, #181818, #0a0a0a);
+  border: 2px solid #ff0000;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .45), 0 0 25px rgba(255, 0, 0, .2);
+  line-height: 1.6;
+}
+
+.hamburguer-faixa {
+  position: absolute;
+  top: 28px;
+  right: -70px;
+  width: 240px;
+  text-align: center;
+  background: linear-gradient(90deg, #ff0000, #ff6600);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 10px 0;
+  transform: rotate(40deg);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.45);
+  z-index: 5;
+}
+
+.hamburguer-conteudo {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 45px;
+  padding: 45px;
+}
+
+.hamburguer-titulo {
+  color: #ff3333;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hamburguer-subtitulo {
+  color: #ddd;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.hamburguer-beneficios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.hamburguer-item {
+  background: #1d1d1d;
+  border-left: 4px solid #ff0000;
+  border-radius: 12px;
+  padding: 18px;
+  color: #eee;
+  font-size: 16px;
+  transition: .3s;
+}
+
+.hamburguer-item:hover {
+  transform: translateY(-4px);
+  background: #262626;
+}
+
+.hamburguer-lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hamburguer-preco-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background: rgba(255, 0, 0, 0.03);
+  background-image: linear-gradient(145deg, rgba(255, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.6) 100%);
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  backdrop-filter: blur(5px);
+  transition: all 0.4s ease;
+}
+
+.hamburguer-preco-box:hover {
+  border-color: #ff0000;
+  box-shadow: 0 12px 35px rgba(255, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.hamburguer-preco-valor {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.hamburguer-preco-valor small {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-right: 2px;
+  color: #00ff66;
+}
+
+.hamburguer-preco-valor strong {
+  font-size: 76px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #ffffff;
+  text-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+}
+
+.hamburguer-preco-valor sup {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: #00ff66;
+}
+
 /* ===========================
    IMAGENS DE FUNDO DOS CARDS
 =========================== */
+.combos-ball8 { background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('img-43.webp') center 60%/cover no-repeat; }
 .batata-650g, .batata-350g { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-1.webp') center 65%/cover no-repeat; }
 .pizza { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-18.webp') center 65%/cover no-repeat; }
 .croquete { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-34.webp') center 65%/cover no-repeat; }
@@ -582,6 +586,7 @@ header {
 .mesa-semi { background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('img-11.webp') center 65%/cover no-repeat; }
 .mesa-pro { background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('img-16.webp') center 60%/cover no-repeat; }
 .extra { background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('img-31.webp') center 60%/cover no-repeat; }
+
 
 /* ===========================
    BOTÕES FLUTUANTES 
