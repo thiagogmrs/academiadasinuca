@@ -308,23 +308,6 @@ header {
   line-height: 1.6;
 }
 
-.torre-faixa {
-  position: absolute;
-  top: 28px;
-  right: -70px;
-  width: 240px;
-  text-align: center;
-  background: linear-gradient(90deg, #ff3300, #ff9800);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  padding: 10px 0;
-  transform: rotate(40deg);
-  box-shadow: 0 8px 20px rgba(216, 32, 0, 0.45);
-  z-index: 5;
-}
-
 .torre-conteudo {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -405,6 +388,15 @@ header {
   margin-bottom: 15px;
 }
 
+.preco-antigo {
+  text-decoration: line-through;
+  color: var(--texto-secundario);
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: -5px;
+}
+
 .torre-preco-valor {
   display: flex;
   justify-content: center;
@@ -449,23 +441,6 @@ header {
   border-radius: 22px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, .45), 0 0 25px rgba(255, 0, 0, .2);
   line-height: 1.6;
-}
-
-.hamburguer-faixa {
-  position: absolute;
-  top: 28px;
-  right: -70px;
-  width: 240px;
-  text-align: center;
-  background: linear-gradient(90deg, #ff0000, #ff6600);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  padding: 10px 0;
-  transform: rotate(40deg);
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.45);
-  z-index: 5;
 }
 
 .hamburguer-conteudo {
@@ -573,7 +548,7 @@ header {
 =========================== */
 .combos-ball8 { 
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('img-43.webp') center 60%/cover no-repeat; 
-  overflow: hidden; /* Garante que a faixa não escape do card */
+  overflow: hidden; 
 }
 
 .batata-650g, .batata-350g { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-1.webp') center 65%/cover no-repeat; }
@@ -590,7 +565,7 @@ header {
 .cerveja-corona { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-8.webp') 40% 45%/cover no-repeat; }
 .coca-cola-600 { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-9.webp') center/cover no-repeat; }
 .coca-cola-lata { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-10.webp') center/cover no-repeat; }
-.coca-cola-290 { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-15.webp') center/cover no-repeat; }
+.coca-cola-700ml, .coca-cola-500ml { background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img-44.webp') center/cover no-repeat; }
 .fys { background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img-32.webp') center 50%/cover no-repeat; }
 .pepsi { background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img-20.webp') center 50%/cover no-repeat; }
 .fanta { background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img-22.webp') center 50%/cover no-repeat; }
@@ -839,5 +814,16 @@ footer p {
   .btn-instagram svg {
     width: 24px;
     height: 24px;
+  }
+
+  /* ===========================
+     NOVIDADE: IMAGENS DE FUNDO MOBILE PARA TORRE E HAMBÚRGUER
+  =========================== */
+  .torre-card {
+    background: linear-gradient(rgba(10, 10, 10, 0.75), rgba(24, 24, 24, 0.85)), url('sua-imagem-torre.webp') center/cover no-repeat !important;
+  }
+
+  .hamburguer-destaque-card {
+    background: linear-gradient(rgba(10, 10, 10, 0.75), rgba(24, 24, 24, 0.85)), url('sua-imagem-hamburguer.webp') center/cover no-repeat !important;
   }
 }

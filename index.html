@@ -33,47 +33,21 @@
 
     <nav class="nav-categorias">
       <button class="nav-btn active" onclick="filtrarCategoria('todas', this)">🔥 Todos</button>
-      <button class="nav-btn" onclick="filtrarCategoria('cat-combos', this)">🎱 Combos</button>
       <button class="nav-btn" onclick="filtrarCategoria('cat-torre', this)">🍺 Torre de Chopp</button>
-      <button class="nav-btn" onclick="filtrarCategoria('cat-copao', this)">🍹 Copão</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-combos', this)">🎱 Combos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-hamburguer', this)">🍔 Hambúrguer</button>
       <button class="nav-btn" onclick="filtrarCategoria('cat-petiscos', this)">🍟 Petiscos</button>
+      <button class="nav-btn" onclick="filtrarCategoria('cat-copao', this)">🍹 Copão</button>
       <button class="nav-btn" onclick="filtrarCategoria('cat-mesas', this)">🎱 Mesas</button>
       <button class="nav-btn" onclick="filtrarCategoria('cat-cervejas', this)">🍺 Cervejas</button>
       <button class="nav-btn" onclick="filtrarCategoria('cat-refrigerantes', this)">🥤 Refrigerantes</button>
       <button class="nav-btn" onclick="filtrarCategoria('cat-energeticos', this)">⚡ Energéticos</button>
       <button class="nav-btn" onclick="filtrarCategoria('cat-bebidas', this)">🧃 Bebidas em Geral</button>
-      <button class="nav-btn" onclick="filtrarCategoria('cat-hamburguer', this)">🍔 Hambúrguer</button>
     </nav>
   </div>
 
   <!-- CONTEÚDO PRINCIPAL -->
   <div class="container">
-
-    <!-- COMBOS -->
-    <section class="categoria" id="cat-combos">
-      <h2>🎱 Combos</h2>
-      <div class="cards">
-        <div class="card animation combos">
-          <h3>Combo Pro</h3>
-          <p>1 Hora Mesa Profissional + Batata 350g + Cerveja Litrão</p>
-          <div class="preco">R$ 49,90</div>
-        </div>
-
-         <div class="card animation combos-ball8">
-          <div class="faixa-destaque">O MAIS PEDIDO!</div>
-          <h3>Combo Torre Ball</h3>
-          <p>1 Hora Mesa Semi ou Pro + Batata 350g + Torre de Chopp 1.5 Litros</p>
-          <p>Consultar disponibilidade de mesas</p>
-          <div class="preco">R$ 54,90</div>
-        </div>
-
-        <div class="card animation combos">
-          <h3>Combo Semi Pro</h3>
-          <p>1 Hora Mesa Semi Profissional + Batata 350g + Cerveja Litrão</p>
-          <div class="preco">R$ 44,90</div>
-        </div>
-      </div>
-    </section>
 
     <!-- TORRE DE CHOPP -->
     <section class="categoria" id="cat-torre">
@@ -96,11 +70,67 @@
           <div class="torre-lateral">
             <div class="torre-preco-box">
               <span class="preco-badge">OFERTA DA CASA</span>
+              <span class="preco-antigo">R$ 59,90</span>
               <div class="torre-preco-valor">
                 <small>R$</small>
-                <strong>39</strong>
+                <strong>44</strong>
                 <sup>,90</sup>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+       <!-- COMBOS -->
+    <section class="categoria" id="cat-combos">
+      <h2>🎱 Combos</h2>
+      <div class="cards">
+        <div class="card animation combos">
+          <h3>Combo Pro</h3>
+          <p>1 Hora Mesa Profissional + Batata 350g + Cerveja Litrão</p>
+          <div class="preco">R$ 49,90</div>
+        </div>
+
+         <div class="card animation combos-ball8">
+          <div class="faixa-destaque">O MAIS PEDIDO!</div>
+          <h3>Combo Torre Ball</h3>
+          <p>1 Hora Mesa Semi ou Pro + Batata 350g + Torre de Chopp 1.5 Litros</p>
+          <p>Consultar disponibilidade de mesas</p>
+          <div class="preco">R$ 59,90</div>
+        </div>
+
+        <div class="card animation combos">
+          <h3>Combo Semi Pro</h3>
+          <p>1 Hora Mesa Semi Profissional + Batata 350g + Cerveja Litrão</p>
+          <div class="preco">R$ 44,90</div>
+        </div>
+      </div>
+    </section>
+    
+          <!-- SEÇÃO DESTAQUE: HAMBÚRGUER -->
+    <section class="categoria hamburguer-destaque-card" id="cat-hamburguer">
+      <!-- <div class="hamburguer-faixa">LANÇAMENTO</div> -->
+
+      <div class="hamburguer-conteudo">
+        <div class="hamburguer-info">
+          <h2 class="hamburguer-titulo">🍔 Hambúrguer</h2>
+          <p class="hamburguer-subtitulo">Sabor Incomparável & Artesanal</p>
+
+          <div class="hamburguer-beneficios">
+            <div class="hamburguer-item">🥩 Blend Especial 120g</div>
+            <div class="hamburguer-item">🧀 Queijo Cheddar</div>
+            <div class="hamburguer-item">🥫 Molho Especial</div>
+          </div>
+        </div>
+
+        <div class="hamburguer-lateral">
+          <div class="hamburguer-preco-box">
+            <span class="preco-badge">TACADA CERTA</span>
+            <div class="hamburguer-preco-valor">
+              <small>R$</small>
+              <strong>34</strong>
+              <sup>,90</sup>
             </div>
           </div>
         </div>
@@ -138,11 +168,11 @@
     <section class="categoria" id="cat-copao">
       <h2>🍹 Copão</h2>
       <div class="cards">
-        <div class="card copao jackdaniels">
+        <!-- <div class="card copao jackdaniels">
           <h3>Copão Jack Daniel's</h3>
           <p>Copão de 700ml com energético, gelo filtrado e dose Jack Daniel's</p>
           <div class="preco">R$ 28,90</div>
-        </div>
+        </div> -->
         <div class="card copao redlabel">
           <h3>Copão Red Label</h3>
           <p>Copão de 700ml com energético, gelo filtrado e dose Red Label</p>
@@ -153,11 +183,11 @@
           <p>Copão de 700ml com energético, gelo filtrado e dose White Horse</p>
           <div class="preco">R$ 24,90</div>
         </div>
-        <div class="card copao absolut">
+        <!-- <div class="card copao absolut">
           <h3>Copão Absolut</h3>
           <p>Copão de 700ml com energético, gelo filtrado e dose Absolut</p>
           <div class="preco">R$ 23,90</div>
-        </div>
+        </div> -->
         <div class="card copao passport">
           <h3>Copão Passport</h3>
           <p>Copão de 700ml com energético, gelo filtrado e dose Passport</p>
@@ -167,6 +197,16 @@
           <h3>Copão Black Fire</h3>
           <p>Copão de 700ml com energético, gelo filtrado e dose Black Fire</p>
           <div class="preco">R$ 14,90</div>
+        </div>
+            <div class="card coca-cola-700ml">
+          <h3>Copão de Coca Cola 700ml</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 9,90</div>
+        </div>
+        <div class="card coca-cola-500ml">
+          <h3>Copão de Coca Cola 500ml</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 7,90</div>
         </div>
       </div>
     </section>
@@ -178,12 +218,12 @@
         <div class="card cerveja-reineken">
           <h3>Heineken 600ml</h3>
           <p>Cerveja gelada 600ml</p>
-          <div class="preco">R$ 16,90</div>
+          <div class="preco">R$ 17,90</div>
         </div>
         <div class="card cerveja-original">
           <h3>Original Litrão</h3>
           <p>Cerveja gelada 1 litro</p>
-          <div class="preco">R$ 16,90</div>
+          <div class="preco">R$ 17,90</div>
         </div>
         <!-- <div class="card cerveja-bud">
           <h3>Budweiser Litrão</h3>
@@ -227,19 +267,24 @@
     <section class="categoria" id="cat-refrigerantes">
       <h2>🥤 Refrigerantes</h2>
       <div class="cards">
+         <div class="card coca-cola-700ml">
+          <h3>Copão de Coca Cola 700ml</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 9,90</div>
+        </div>
+        <div class="card coca-cola-500ml">
+          <h3>Copão de Coca Cola 500ml</h3>
+          <p>Refrigerante gelado</p>
+          <div class="preco">R$ 7,90</div>
+        </div>
         <div class="card coca-cola-600">
           <h3>Coca Cola 600ml</h3>
           <p>Refrigerante gelado</p>
-          <div class="preco">R$ 9,90</div>
+          <div class="preco">R$ 10,90</div>
         </div>
         <div class="card coca-cola-lata">
           <h3>Coca Cola Lata</h3>
           <p>Refrigerante gelado</p>
-          <div class="preco">R$ 7,00</div>
-        </div>
-        <div class="card coca-cola-290">
-          <h3>Coca Cola 290ml</h3>
-          <p>Refrigerante gelado de vidro</p>
           <div class="preco">R$ 7,50</div>
         </div>
         <div class="card fys">
@@ -247,11 +292,11 @@
           <p>Refrigerante gelado</p>
           <div class="preco">R$ 7,00</div>
         </div>
-        <div class="card pepsi">
+        <!-- <div class="card pepsi">
           <h3>Pepsi Lata</h3>
           <p>Refrigerante gelado</p>
           <div class="preco">R$ 5,90</div>
-        </div>
+        </div> -->
         <div class="card fanta">
           <h3>Fanta Lata</h3>
           <p>Refrigerante gelado</p>
@@ -324,34 +369,6 @@
       </div>
     </section>
 
-        <!-- SEÇÃO DESTAQUE: HAMBÚRGUER -->
-    <section class="categoria hamburguer-destaque-card" id="cat-hamburguer">
-      <!-- <div class="hamburguer-faixa">LANÇAMENTO</div> -->
-
-      <div class="hamburguer-conteudo">
-        <div class="hamburguer-info">
-          <h2 class="hamburguer-titulo">🍔 Hambúrguer</h2>
-          <p class="hamburguer-subtitulo">Sabor Incomparável & Artesanal</p>
-
-          <div class="hamburguer-beneficios">
-            <div class="hamburguer-item">🥩 Blend Especial 120g</div>
-            <div class="hamburguer-item">🧀 Queijo Cheddar</div>
-            <div class="hamburguer-item">🍞 Pão com Gergelim</div>
-          </div>
-        </div>
-
-        <div class="hamburguer-lateral">
-          <div class="hamburguer-preco-box">
-            <span class="preco-badge">TACADA CERTA</span>
-            <div class="hamburguer-preco-valor">
-              <small>R$</small>
-              <strong>34</strong>
-              <sup>,90</sup>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
     <!-- MESAS -->
